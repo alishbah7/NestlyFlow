@@ -1,0 +1,110 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-card {
+  margin: 20px;
+  width: 100%;
+  max-width: 500px; /* Increased max-width for better appearance */
+  background: white;
+  border-radius: 10px; /* Apply to all corners for a standard centered modal */
+  padding: 42px 30px;
+  box-shadow: 0 1px 10px rgb(232, 133, 209);
+  text-align: center;
+  position: relative; /* Ensure relative positioning for absolute children */
+}
+
+.modal-title {
+  font-size: 34px;
+  font-weight: 700;
+  background: linear-gradient(
+    to right,
+    #8a4df3 0%,
+    #d35ba4 50%,
+    #f78154 100%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 26px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  outline: none;
+  font-size: 15px;
+  background: #f4f7f8;
+  box-shadow: inset 0 2px 4px rgba(206, 98, 225, 0.895);
+  transition: 0.25s;
+}
+
+.modal-input:focus {
+  background:
+    linear-gradient(#f4f7f8, #f4f7f8) padding-box,
+    linear-gradient(to right, #8a4df3, #d35ba4, #f78154) border-box;
+}
+
+.modal-error {
+  color: #ff4d4d;
+  font-size: 13px;
+}
+
+.modal-success {
+  color: #16a34a;
+  font-size: 13px;
+}
+
+.modal-button {
+  width: 140px;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(90deg, #c170bb, #f78154);
+}
+
+.modal-close-btn {
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 1rem; /* Equivalent to top-4 */
+  right: 1rem; /* Equivalent to right-4 */
+  color: black;
+  background-color: transparent; 
+  cursor: pointer;
+}
+
+.modal-close-btn svg { /* Styling for the lucide-react X icon */
+  height: 1.5rem; /* Equivalent to h-6 */
+  width: 1.5rem; /* Equivalent to w-6 */
+}
+.delete-para{
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.delete-modal-btn{
+  margin-top: 20px;
+  background: red;
+  width: 180px;
+}

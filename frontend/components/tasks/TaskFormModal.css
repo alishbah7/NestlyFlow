@@ -1,0 +1,179 @@
+.task-form-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+}
+
+.task-form-modal {
+    width: 100%;
+    max-width: 550px;
+    background: white;
+    border-radius: 12px;
+    padding: 36px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-out;
+    max-height: 90vh; /* Limit modal height to 90% of viewport height */
+    overflow-y: auto; /* Enable vertical scrolling for modal content */
+    scrollbar-width: none;
+    box-shadow: 0 1px 10px rgb(232, 133, 209);
+}
+
+.task-form-header {
+    margin-top: -10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 24px; */
+    padding-bottom: 10px; /* Add some padding bottom for visual separation */
+    border-bottom: 1px solid #eee; 
+}
+
+.task-form-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(
+        to right, 
+        #8a4df3 0%,    
+        #d35ba4 50%,   
+        #f78154 100%   
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #999;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 20px; /* Add padding top to separate from header */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 2px solid purple;
+    outline: none;
+    font-size: 15px;
+    background: #f9fafb;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-group textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-error {
+    color: #ef4444;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.btn-cancel, .btn-save {
+    padding: 12px 24px;
+    border-radius: 999px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-cancel {
+    background-color: #f1f1f1;
+    color: #555;
+}
+
+.btn-cancel:hover {
+    background-color: #e5e5e5;
+}
+
+.btn-save {
+    color: white;
+    background: linear-gradient(90deg, #c170bb, #f78154);
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+#title{
+    height: 24px;
+}
+
+@media screen and (max-width: 580px) {
+    .form-row{
+        flex-direction: column;
+    }
+    .task-form-modal{
+        margin: 20px;
+    }
+    .task-form-modal h2{
+        font-size: 16px;
+    }
+    .form-actions{
+        justify-content: center;
+        align-items: center;
+    }
+    .form-actions .btn-save{
+        width: 100%;
+    }
+}

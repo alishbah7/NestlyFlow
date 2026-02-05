@@ -1,55 +1,44 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+
+- Version change: 0.0.0 → 1.0.0
+- Added sections:
+  - Principle I: Full-Stack Technology Stack
+  - Principle II: API-Driven Communication
+  - Principle III: High-Fidelity User Interface
+  - Principle IV: Dual-Mode Interaction
+  - Principle V: Secure and Environment-Driven Configuration
+  - Principle VI: Modular Backend Architecture
+- Removed sections: None
+- Templates requiring updates:
+  - ✅ .specify/templates/plan-template.md
+  - ✅ .specify/templates/spec-template.md
+  - ✅ .specify/templates/tasks-template.md
+- Follow-up TODOs: None
+-->
+# AI-Powered Todo App Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Full-Stack Technology Stack
+The project will use a modern, decoupled architecture with a Next.js frontend and a Python (FastAPI) backend. The database will be a Neon serverless Postgres instance. This ensures a clear separation of concerns and allows for independent development and scaling.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. API-Driven Communication
+All communication between the frontend and backend will be through a well-defined RESTful API. The backend will expose two primary endpoints: `/crud` for data manipulation and `/chat` for conversational interactions, ensuring a consistent interface.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. High-Fidelity User Interface
+The frontend implementation must be a "pixel-perfect" representation of the designs provided in the `frontend/public/images` directory. This commitment to design ensures a high-quality, polished user experience.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Dual-Mode Interaction
+The application will support two modes of interaction: a traditional graphical user interface for manual task management and a conversational interface powered by a Groq and Gemini's free LLM based chatbot. This provides users with flexibility and an innovative way to manage their tasks.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Secure and Environment-Driven Configuration
+All sensitive information, including database connection strings (`DATABASE_URL`) and API keys (`GROQ_API_KEY`), must be managed through an `.env` file and not be hardcoded into the application. This is a non-negotiable security requirement.
 
-### [PRINCIPLE_6_NAME]
-
-
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### VI. Modular Backend Architecture
+The backend code will be organized into a modular structure. The main entry point will be `main.py`, with business logic for different concerns separated into a `routes` directory, specifically `todos.py` for CRUD operations and `chatbot.py` for the conversational AI.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This Constitution supersedes all other practices. Amendments require documentation, approval, and a migration plan. All PRs/reviews must verify compliance with these principles.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-01-10 | **Last Amended**: 2026-01-10

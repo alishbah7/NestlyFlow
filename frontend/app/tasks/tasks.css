@@ -1,0 +1,230 @@
+.tasks-page-container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.tasks-content-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+.task-title-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tasks-title {
+    width: 200px;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  background-color: orange;
+  margin-bottom: 2rem;
+  text-align: center;
+  margin-top: -40px;
+  padding: 10px;
+}
+
+.tasks-error-alert {
+  background-color: #fee2e2;
+  color: #ef4444;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.tasks-error-strong {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.tasks-error-span {
+  font-size: 0.9rem;
+}
+
+.tasks-loading-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 3rem 0;
+}
+
+/* Controls Section */
+.tasks-controls-top-row {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative; /* For potential positioning of dropdowns if needed */
+}
+
+.add-task-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg, #c170bb, #f78154);
+    transition: 0.25s;
+    flex-shrink: 0; /* Prevent button from shrinking */
+    height: 44px; /* Ensure consistent height with select */
+}
+
+.add-task-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section-and-search {
+    display: flex;
+    flex-direction: column; /* Stack filter and search vertically */
+    align-items: flex-end; /* Align to the right */
+    gap: 1rem;
+    flex-grow: 1; /* Allow it to take available space */
+    position: relative; /* For positioning the dropdown */
+}
+
+.filter-by {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative; /* Needed for z-index or absolute positioning of select options */
+}
+
+.filter-by label {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Specific width override for CustomFilterDropdown on TasksPage */
+.tasks-filter-dropdown-wrapper .custom-dropdown {
+    width: 200px !important;
+    /* max-width: 400px !important;  */
+    
+}
+
+.search-bar-tasks {
+    position: relative;
+    width: 100%; /* Take full width within its container */
+    max-width: 300px; /* Limit max width for desktop */
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+.searchBar{
+    display: flex;
+    justify-content: end;
+    margin-top: -16px;
+}
+.search-input-tasks {
+    width: 100%;
+    padding: 10px 12px 10px 40px; /* Adjust padding for icon */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input-tasks:focus {
+    border-color: purple;
+}
+
+.small-btn{
+    display: none;
+}
+.big-btn{
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    
+    .search-bar-tasks{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+    }
+    .task-filter{
+        display: none;
+    }
+    /* Override custom-dropdown width for small screens */
+    
+}
+@media screen and (max-width: 480px) {
+    .tasks-filter-dropdown-wrapper .custom-dropdown {
+        width: 140px !important;
+    /* max-width: 400px !important;  */
+    }
+    .small-btn{
+        display: block;
+    }
+    
+    .big-btn{
+        display: none;
+    }
+}
+
+/* New style for subtle fetching indicator */
+.fetching-updates-overlay {
+  position: fixed;
+  top: 0; /* Or bottom: 0; */
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 0;
+  background-color: rgb(255, 228, 193); /* Semi-transparent dark background */
+  color: purple;
+  text-align: center;
+  font-size: 0.9rem;
+  z-index: 1000; /* Ensure it's on top of other content */
+  animation: fadeIn 0.3s ease-out; /* Optional: fade in animation */
+}
+
+.fetching-updates-overlay p {
+  margin: 0;
+  padding: 0;
+  display: inline-block; /* To allow a spinner next to it if desired */
+}
+
+/* Optional: Add a simple spinner animation */
+.fetching-updates-overlay p::before {
+  content: ' ';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid purple;
+  border-top: 2px solid plum;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,132 @@
+.card-box {
+    background-color: rgb(245, 221, 245);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(212, 130, 212);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure cards have the same height */
+    border: 2px solid purple ;
+}
+
+.card-box h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.no-tasks-message {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: purple;
+    font-size: 1.1rem;
+}
+
+/* New Stacked Circular Progress Bar Styles */
+.stacked-circular-progress-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    position: relative; /* Needed for text positioning */
+}
+
+.stacked-circular-progress-svg {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    transform: rotate(-90deg); /* Start from the top */
+}
+
+.stacked-progress-background {
+    fill: none;
+    stroke: #e0e0e0;
+    stroke-width: 10;
+    cx: 75; /* Center of SVG */
+    cy: 75; /* Center of SVG */
+    r: 70; /* Radius */
+}
+
+.stacked-progress-bar {
+    fill: none;
+    stroke-linecap: round;
+    cx: 75;
+    cy: 75;
+    r: 70;
+}
+
+.stacked-progress-bar.high { stroke: #ef4444; } /* Red */
+.stacked-progress-bar.medium { stroke: #f59e0b; } /* Orange */
+.stacked-progress-bar.low { stroke: #22c55e; } /* Green */
+
+.stacked-progress-text {
+    fill: #333;
+    font-size: 30px;
+    font-weight: 700;
+    
+}
+
+.priority-segments-info {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.segment-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.segment-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.segment-color.high { background-color: #ef4444; }
+.segment-color.medium { background-color: #f59e0b; }
+.segment-color.low { background-color: #22c55e; }
+
+.segment-text-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.segment-label {
+    font-size: 12px;
+    color: purple;
+    font-weight: 500;
+}
+
+.segment-tasks {
+    text-align: center;
+    margin-top: 6px;
+    font-size: 12px;
+    color: purple;
+}
+
+/* Adjust for no tasks state in footer */
+.priority-footer-overall {
+    margin-top: auto;
+    text-align: center;
+    font-size: 2rem; /* Adjusted for "0 tasks" text */
+    font-weight: 700;
+    color: #333;
+}
+
+@media screen and (max-width: 325px) {
+    .priority-segments-info{
+        gap: 30px;
+    }
+    .segment-label{
+        font-size: 8px;
+    }
+}

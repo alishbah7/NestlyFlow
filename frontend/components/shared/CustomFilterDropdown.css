@@ -1,0 +1,86 @@
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Take full width of parent */
+    max-width: 400px; /* Adjust as needed */
+}
+
+.dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid purple;
+    background-color: white;
+    font-size: 0.9rem;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 44px; /* Match height of add task button */
+}
+
+
+.dropdown-toggle.open {
+    border-color: purple;
+}
+
+.dropdown-toggle svg {
+    transition: transform 0.2s ease;
+}
+
+.dropdown-toggle.open svg {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Open below the toggle button */
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 100%;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    max-height: 250px; /* Limit height for scrollability */
+    overflow-y: auto;
+}
+
+.dropdown-group-label {
+    font-size: 16px;
+    padding: 8px 12px;
+    color: white;
+    background-color: orange;
+    cursor: default;
+    user-select: none;
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #333;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(90deg, #c170bb, #f78154); /* Gradient background on hover */
+    color: white;
+}
+
+.dropdown-item.selected {
+    color: white;
+    background: linear-gradient(90deg, #c170bb, #f78154);
+    font-weight: 500;
+}
+@media screen and (max-width: 300px) {
+    .custom-dropdown{
+        width: 160px;
+    }
+}

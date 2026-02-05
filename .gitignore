@@ -1,0 +1,25 @@
+# Dependency directories
+node_modules/
+.venv/
+venv/
+__pycache__/
+
+# Build artifacts
+dist/
+build/
+target/
+
+# Log files
+*.log
+
+# Environment variables
+.env*
+!.env.example
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE-specific
+.vscode/
+.idea/

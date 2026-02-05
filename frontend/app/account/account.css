@@ -1,0 +1,116 @@
+/* .account-wrapper {
+  min-height: 100vh;
+  background: #f4f5f7;
+  padding: 40px 20px;
+} */
+
+.account-wrapper{
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.account-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  color: rgb(94, 36, 145);
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.info-card {
+  height: 140px;  
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 1px 10px rgba(223, 120, 220, 0.849);
+}
+
+.card-icon {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 20px;
+  background: #ffe8dc;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.card-label {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.card-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.card-action {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  background: orange;
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btns{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 10px;
+}
+.acc-btn {
+  display: block;
+  background: orange;
+  color: white;
+  padding: 10px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+.delete-btn{
+  background: rgb(61, 23, 102);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .account-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px){
+    .account-wrapper{
+        padding: 20px 20px;
+    }
+    .account-title{
+        font-size: 20px;
+    }
+    .card-value-mail{
+        font-size: 12px;
+    }
+    .btns{
+      flex-direction: column;
+    }
+    .acc-btn{
+      width: 200px;
+    }
+}
