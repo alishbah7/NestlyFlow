@@ -25,7 +25,7 @@ export default function GlobalChatbot() {
                     text: "Hello! I'm Flowy, your NestlyFlow assistant. How can I help you today?",
                     sender: 'bot',
                     timestamp: new Date(),
-                },
+                } as Message,
             ]);
             setHistory([]); // Clear history
             setShowLogin(false);
@@ -35,7 +35,7 @@ export default function GlobalChatbot() {
     useEffect(() => {
         if (user && showLogin) {
             setShowLogin(false);
-            const loginSuccessMessage = {
+            const loginSuccessMessage: Message = {
                 id: messages.length + 1,
                 text: "Great, you're logged in! How can I help you with your tasks?",
                 sender: 'bot',
