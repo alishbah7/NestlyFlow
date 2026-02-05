@@ -7,7 +7,7 @@ import "./reset-password.css";
 const ResetPassword = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const token = searchParams.get("token");
+  const [token, setToken] = useState<string | null>(null);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -16,12 +16,15 @@ const ResetPassword = () => {
   const [isResetting, setIsResetting] = useState(false);
 
   useEffect(() => {
-    if (!token) {
+    const paramToken = searchParams.get("token");
+    setToken(paramToken);
+
+    if (!paramToken) {
       router.push("/login");
     } else {
       setShowForm(true);
     }
-  }, [token, router]);
+  }, [searchParams, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,8 +51,8 @@ const ResetPassword = () => {
     }
   };
 
-  if (!showForm && !message) {
-    return null; // Or a loading spinner
+  if (token === null && !message) {
+    return <div>Loading...</div>;
   }
 
   return (
