@@ -6,6 +6,10 @@ from fastapi import APIRouter, Depends, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 import auth
 import models
@@ -15,7 +19,12 @@ from dependencies import get_db, get_current_user
 router = APIRouter()
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
-RESEND_API_KEY = "re_M3W87PmD_KS1WG2J9GnSrz2X4FqqzFWsg"
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+if not RESEND_API_KEY:
+    raise HTTPException(
+        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        detail="RESEND_API_KEY is not configured.",
+    )
 resend.api_key = RESEND_API_KEY
 
 
