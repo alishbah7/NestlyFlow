@@ -256,7 +256,7 @@ export const deleteTodo = async (id: number): Promise<void> => {
 
 // Dashboard API
 export const fetchDashboardData = async (): Promise<DashboardStats> => {
-    const response = await fetch(`${API_BASE_URL}/api/dashboard`, {
+    const response = await fetch(`${API_BASE_URL}/api`, {
         headers: getAuthHeaders(),
     });
     return handleResponse(response);
