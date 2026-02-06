@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My To-Do Application", // Updated title
+  title: "NestlyFlow - Tasks Management", // Updated title
   description: "A sleek and attractive To-Do web application.", // Updated description
 };
 
