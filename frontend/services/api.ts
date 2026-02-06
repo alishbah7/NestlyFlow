@@ -117,7 +117,7 @@ const handleResponse = async (response: Response) => {
       errorData = JSON.parse(errorText);
     } catch (parseError) {
       // The error response wasn't JSON. Throw a generic error.
-      throw new Error(`Server error: ${response.status} - ${errorText || 'Unknown error'}`);
+      throw new Error(`Server error: ${response.status} ${response.statusText} - ${errorText || 'Unknown error'}`);
     }
     // The error response was JSON, throw an error with the detail message.
     throw new Error(errorData.detail || 'Something went wrong');
