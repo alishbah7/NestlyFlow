@@ -7,6 +7,8 @@ import Image from "next/image";
 import heroimg from "../public/images/heroimg.png";
 import { useRouter } from "next/navigation";
 
+import { Instagram, Facebook, Linkedin, X } from 'lucide-react';
+
 const HomePage = () => {
   const { user } = useAuth();
   const router = useRouter();
@@ -107,17 +109,17 @@ const HomePage = () => {
           <h2 className="footer-title">ɴᴇꜱᴛʟʏғʟᴏᴡ</h2>
 
           <div className="footer-social">
-            <Link href="#" className="social-icon">
-              IG
+            <Link href="https://www.instagram.com/innolyze_/" className="social-icon">
+              <Instagram size={24} />
             </Link>
-            <Link href="#" className="social-icon">
-              FB
+            <Link href="https://www.facebook.com/profile.php?id=61579966714044" className="social-icon">
+              <Facebook size={24} />
             </Link>
-            <Link href="#" className="social-icon">
-              LN
+            <Link href="https://www.linkedin.com/in/alishbah-m-kamran-598318316/?originalSubdomain=pk" className="social-icon">
+              <Linkedin size={24} />
             </Link>
-            <Link href="#" className="social-icon">
-              X
+            <Link href="https://x.com/_alishbah04_" className="social-icon">
+              <X size={24} />
             </Link>
           </div>
         </div>
