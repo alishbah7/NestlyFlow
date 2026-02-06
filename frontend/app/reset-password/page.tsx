@@ -4,7 +4,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { resetPasswordConfirm } from "@/services/api";
 import "./reset-password.css";
 
-const ResetPassword = () => {
+// This new component will contain the logic that relies on client-side hooks
+const ClientResetPasswordForm = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [token, setToken] = useState<string | null>(null);
@@ -60,15 +61,10 @@ const ResetPassword = () => {
       <div className="reset-password-card">
         {showForm ? (
           <>
-            <h2 className="reset-password-title">
-              Reset Password
-            </h2>
+            <h2 className="reset-password-title">Reset Password</h2>
             <form className="reset-password-form" onSubmit={handleSubmit}>
               <div>
-                <label
-                  htmlFor="password"
-                  className="label-new-pass"
-                >
+                <label htmlFor="password" className="label-new-pass">
                   New Password
                 </label>
                 <input
@@ -82,10 +78,7 @@ const ResetPassword = () => {
                 />
               </div>
               <div>
-                <label
-                  htmlFor="confirm-password"
-                  className="label-new-pass"
-                >
+                <label htmlFor="confirm-password" className="label-new-pass">
                   Confirm Password
                 </label>
                 <input
@@ -116,4 +109,20 @@ const ResetPassword = () => {
   );
 };
 
-export default ResetPassword;
+
+// The main page component will conditionally render the ClientResetPasswordForm
+const ResetPasswordPage = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div>Loading...</div>; // Show a loading indicator during SSR/prerendering
+  }
+
+  return <ClientResetPasswordForm />;
+};
+
+export default ResetPasswordPage;
