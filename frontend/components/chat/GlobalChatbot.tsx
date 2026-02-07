@@ -65,7 +65,7 @@ export default function GlobalChatbot() {
         }
         setShowLogin(false);
 
-        const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+        const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://nestlyflow-api.up.railway.app';
         const token = Cookies.get('token');
         const headers: HeadersInit = { 'Content-Type': 'application/json' };
         if (token) {

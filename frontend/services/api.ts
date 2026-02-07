@@ -1,7 +1,7 @@
 // frontend/services/api.ts
 import Cookies from 'js-cookie';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://nestlyflow-api.up.railway.app';
 
 // Interfaces
 export interface Todo {
